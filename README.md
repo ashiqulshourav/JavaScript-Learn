@@ -2,7 +2,7 @@
 Here I stored all JavaScript learning stage description with Bengali language
 
 
-//==================== Javascript Scopes
+//==================== Javascript Scopes <br>
 /* 
 var x = 23;
 
@@ -26,5 +26,5 @@ console.log(x)
 // 1. parent share everything for child but child not share for parent.
 // 2. child can change parent value.
 */
-
+<br>
 
