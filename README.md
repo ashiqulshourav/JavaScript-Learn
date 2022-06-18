@@ -76,3 +76,92 @@ if (true) {
 // 4. const can't redefine, reassign but can change property value.
 
 */ <br>
+
+
+//==================== Closures <br>
+/*
+var num1 = 2; // This is global object
+
+var sum = function() {
+    var num2 = 3; // This is closure
+    return function() {
+        return num1 + num2;
+    };
+};
+
+var myFunc = sum();
+
+console.dir(myFunc)
+
+function bankAccount(initialBalance) {
+    var balance = initialBalance;
+
+    return function() {
+        return balance;
+    }
+}
+
+var account = bankAccount(100000);
+
+console.dir(account)
+
+var num11 = 2;
+var sum22 = function() {
+    var num33 = 3;
+    return num11 + num33; // There is no closure cause everything is local scope.
+}
+
+console.dir(sum22)
+
+(function() {
+    var fName = "Ashiqul"; // This is closure for fullName function. cause this whole function is blocked scopes
+
+    var fullName = function() {
+        var lastName = "Islam";
+        return fName + lastName;
+    };
+
+    console.dir(fullName)
+})();
+
+function stopWatch() {
+    var startTime = Date.now();
+
+    function getDelay() {
+        console.log(Date.now() - startTime);
+    }
+
+    return getDelay;
+}
+
+var timer = stopWatch();
+
+for (var i = 0; i < 100000000; i++) {
+    var a = Math.random() * 10000000;
+}
+
+timer();
+console.dir(timer)
+
+//Here var timer = stopWatch(); run first then huge operation & then timer() function run. but how js remember the start time (Ans: its only for closure)
+
+timer = null;
+timer();
+
+//performance optimization - After timer done then if i set timer = null then js automatically clean the timer garbage
+
+
+
+function apiFunction(url) {
+    fetch(url).then((res) => {
+        console.log(res)
+    })
+}
+
+apiFunction('https://jsonplaceholder.typicode.com/todos/1')
+
+//Ending Summary
+// 1. Function er vitore bahirer kono variable access korte hole parameter pathiye access korte hoy
+// 2. closure didn't store all global element or immediate parent element only store needed element.
+// 3. Closure store variable reference not direct variable value
+*/ <br>
