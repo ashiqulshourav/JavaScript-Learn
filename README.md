@@ -165,3 +165,182 @@ apiFunction('https://jsonplaceholder.typicode.com/todos/1')
 // 2. closure didn't store all global element or immediate parent element only store needed element.
 // 3. Closure store variable reference not direct variable value
 */ <br>
+
+
+
+//==================== Prototype Inheritance & ES6 class <br>
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// Person.prototype = {
+//     eat: function() {
+//         console.log(`${this.name} is eating`);
+//     }
+// }
+
+// const sakib = new Person("Sakib", 35);
+
+
+
+// var f = function Person() {}
+// Object.prototype.shourav = function() { // this is the master object
+//     console.log('I am shourav');
+// }
+
+// var p = {};
+// p.shourav();
+
+
+// function Person(name, age) { // parent class
+//     this.name = name;
+//     this.age = age;
+// }
+
+
+// function Cricketer(name, age, type, country) { //sub class
+//     Person.call(this);
+//     this.name = name;
+//     this.age = age;
+//     this.type = type;
+//     this.country = country;
+// }
+
+// Person.prototype = {
+//     eat: function() {
+//         console.log(`${this.name} is eating`);
+//     },
+// }
+
+// Cricketer.prototype = Object.create(Person.prototype);
+// Cricketer.prototype.constructor = Cricketer;
+// Cricketer.prototype.play = function() {
+//     console.log(`${this.name} is playing`);
+// }
+
+// let sakib = new Cricketer('Sakib', 35, 'All rounder', "Bangladesh");
+
+// console.log(sakib.play())
+
+// converted upper constructor class into ES6 class
+
+// class Person { //parent class
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     eat() {
+//         console.log(`${this.name} is eat`)
+//     }
+// }
+
+// class Cricketer extends Person { //sub class
+//     constructor(name, age, type, country) {
+//         super(name, age);
+//         this.name = name;
+//         this.age = age;
+//         this.type = type;
+//         this.country = country;
+//     }
+
+//     play() {
+//         console.log(`${this.name} is playing`);
+//     }
+// }
+
+// let sakib = new Cricketer('Sakib', 35, 'All rounder', "Bangladesh");
+
+
+// sakib.eat()
+
+
+
+// How to set getter(get) & setter(set) method
+// class Person {
+//     constructor(name, age) {
+//         this.name = name; //property
+//         this.age = age;
+//     }
+
+//     eat() { //method
+//         console.log(`${this.name} is eating`);
+//     }
+
+//     get SetName() { //getter
+//         return this.name;
+//     }
+
+//     set setName(name) { //setter
+//         this.name = name;
+//     }
+// }
+
+// let sakib = new Person('Sakib', 35);
+// //console.log(sakib.SetName)
+
+// sakib.setName = "Tamim";
+
+// console.log(sakib.name)
+
+
+
+
+// How to set static 
+// class Person {
+//     constructor(name, age) {
+//         this.name = name; //property
+//         this.age = age;
+//     }
+
+//     eat() { //method
+//         console.log(`${this.name} is eating`);
+//     }
+
+//     static isEqualAge(cricketer1, cricketer2) {
+//         return cricketer1.age === cricketer2.age;
+//     }
+// }
+
+// let sakib = new Person('Sakib', 35);
+// let tamim = new Person('Tamim', 35);
+
+// console.log(Person.isEqualAge(sakib, tamim));
+
+
+
+// How to set Polymorphism
+// class Person { // parent class
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     play() {
+//         console.log(`${this.name} is playing`);
+//     }
+// }
+
+// class Cricketer extends Person { //sub class
+//     constructor(name, age, type, country) {
+//         super(name, age);
+//         this.name = name;
+//         this.age = age;
+//         this.type = type;
+//         this.country = country;
+//     }
+//     play() {
+//         super.play()
+//         console.log(`${this.name} is playing cricket`);
+//     }
+// }
+
+// let sakib = new Cricketer('Sakib', 35, 'All rounder', "Bangladesh");
+// sakib.play();
+
+//Ending Summary
+// 1. Master object create korle seta jekono jayga theke call kora jabe.
+// 2. https://www.youtube.com/watch?v=93Styj1K9fY&list=PLHiZ4m8vCp9Nflbo9a0pZuLscG_Xc7DKq&index=8&t=63s
+
+<br>
